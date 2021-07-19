@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+body{
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    width: 950px;
+    display: grid;
+    /* I am adding grid-template-columns so we can easily align the accordion along with the picture */
+    grid-template-columns: repeat(2, 1fr);
+    background-color: white;
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 0 5px 5px -5px black;
+}
+
+.images{
+    position: relative;
+    padding: 50px 0;
+    z-index: 0;
+}
+
+/* I added an extra class since in the mockup, the background is shown to be in the top of the accordion div */
+.bg-img{
+    top: -300px;
+    left: -580px;
+    position: absolute;
+    z-index: -1;
+}
+
+/* the box is also shown to be uniquely positioned, so I played with its top and left property */
+.outer{
+    position: absolute;
+    top: 180px;
+    left: -90px;
+    z-index: 0;
+}
+
+.inner{
+    /* picture should be chopped from the left */
+    overflow: hidden;
+}
+
+.inner picture{
+    margin-left: -80px;
+}
+
+.accordion-container{
+    padding: 50px;
+    padding-bottom: 30px;
+}
+
+.accordion-container h2{
+    color: hsl(238, 29%, 16%);
+    padding-bottom: 20px;
+}
+
+.accordion-container > div{
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+
+.accordion-container span{
+    float: right;
+    transition: 0.5s;
+}
+
+.accordion-container label{
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    padding: 15px 15px 15px 0;
+    color: hsl(237, 12%, 33%);
+    transition: color 0.5s; /* so it doesn't turn red right away */
+}
+
+.accordion-container label:hover{
+    color: hsl(14, 88%, 65%);
+}
+
+.accordion-container input{
+    display: none;
+}
+
+.accordion-container .content{
+    padding: 5px 0;
+    line-height: 1rem;
+    color: hsl(240, 6%, 50%);
+    font-size: 14px;
+    overflow: hidden;
+    height: 0; /* so we can hide the content at first - will only show if input (checkbox) is clicked */
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+/* when chedkbox is clicked, show content */
+.accordion-container input:checked ~ .content{
+    height: 65px;
+    opacity: 1;
+}
+
+.accordion-container input:checked ~ label{
+    color: hsl(238, 29%, 16%);
+    font-weight: 700; /* already imported */  
+}
+
+.accordion-container input:checked ~ label span{
+    /* this simply rotates the span (array) upwards whenever the checkbox is clicked to show content */
+    transform: rotate(180deg);
+    transition: 0.5s;
+ }
+
+ @media (max-width: 780px){
+    .container{
+        max-width: 450px;
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 120px;
+     }
+
+    .images{
+        padding: 0;
+        margin: 0 auto;
+        margin-top: -120px;
+    }
+
+    .inner{
+        overflow: visible;
+        /* I didn't feel the picture was 100% centered so I added some edits on the right margin (shifted it towards the left a little) */
+        margin-right: 40px;
+    }
+
+    .outer{
+        display: none; /* why? because the destop image provided already includes the box :) */
+    } 
+
+    .bg-img{
+        top: 100px;
+        left: -50px;
+    }
+
+    .accordion-container h2{
+        text-align: center;
+    }
+ }
+/**************************************************/
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}

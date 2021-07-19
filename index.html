@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+</head>
+<body>
+  <div class="container">
+    <div class="images">
+      <div class="inner">
+        <!-- this is a new trick I learned from a tutorial I linked to the GitHub README.txt file 
+        this helps us directly insert different images according to the width of the device (responsiveness) -->
+        <picture>
+          <source srcset="./images/illustration-woman-online-mobile.svg" media="(max-width:780px)">
+          <img src="./images/illustration-woman-online-desktop.svg" alt="">
+        </picture>
+
+        <!-- repeat for background too -->
+        <picture >
+          <source srcset="./images/bg-pattern-mobile.svg" media="(max-width:780px)">
+          <img src="./images/bg-pattern-desktop.svg" class="bg-img" alt="">
+        </picture>
+      </div>
+
+      <div class="outer">
+        <img src="./images/illustration-box-desktop.svg" alt="">
+      </div>
+
+    </div>
+
+    <div class="accordion-container">
+      <h2>FAQ</h2>
+      <div class="first-faq">
+        <input type="checkbox" id="faq-1">
+        <label for="faq-1">How many team members can I invite?<span><img src="./images/icon-arrow-down.svg" alt=""></span></label>
+        <div class="content">
+          <p>You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.</p>
+        </div>
+      </div>
+
+      <div class="second-faq">
+        <input type="checkbox" id="faq-2">
+        <label for="faq-2">What is the maximum file upload size?<span><img src="./images/icon-arrow-down.svg" alt=""></span></label>
+        <div class="content">
+          <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+        </div>
+      </div>
+
+      <div class="third-faq">
+        <input type="checkbox" id="faq-3">
+        <label for="faq-3">How do I reset my password?<span><img src="./images/icon-arrow-down.svg" alt=""></span></label>
+        <div class="content">
+          <p>Click “Forgot password” from the login page or “Change password” from your profile page.
+            A reset link will be emailed to you.</p>
+        </div>
+      </div>
+
+      <div class="fourth-faq">
+        <input type="checkbox" id="faq-4">
+        <label for="faq-4">Can I cancel my subscription?<span><img src="./images/icon-arrow-down.svg" alt=""></span></label>
+        <div class="content">
+          <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
+        </div>
+      </div>
+
+      <div class="fifth-faq">
+        <input type="checkbox" id="faq-5">
+        <label for="faq-5">Do you provide additional support?<span><img src="./images/icon-arrow-down.svg" alt=""></span></label>
+        <div class="content">
+          <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div> <!-- end of container -->
+  <script src="main.js"></script>
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>  -->
+  
+</body>
+</html>
