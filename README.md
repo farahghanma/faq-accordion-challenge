@@ -1,7 +1,7 @@
 # faq-accordion-challenge
 
 This was a challenge by Frontend Mentor. 
-Link to the challenge: https://www.frontendmentor.io?ref=challenge <br>
+Link to the Frontend Mentor challenge: https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam <br>
 You can preview the FAQ Accordion through this site: https://blissful-liskov-932f12.netlify.app/
 
 <br>
